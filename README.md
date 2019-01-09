@@ -15,4 +15,4 @@
 
 we should install those tools for dev
 
-- Export `TEST_DB_DSN=root@tcp(mysql:3306)/pkg_test?charset=utf8&parseTime=true&loc=Local`
+- Export `TEST_DB_DSN=root@tcp(mysql:3306)/xm_test?charset=utf8&parseTime=true&loc=Local`

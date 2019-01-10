@@ -1,5 +1,8 @@
 # xorm-migrator
 
+![master](https://travis-ci.org/kit-x/xorm-migrator.svg?branch=master)
+![develop](https://travis-ci.org/kit-x/xorm-migrator.svg?branch=develop)
+
 基于 xorm 提供一些比较好用的数据库迁移功能
 
 ```

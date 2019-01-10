@@ -1,10 +1,9 @@
-package example
+package main
 
 import (
 	"os"
-	"runtime"
 
-	"github.com/kit-x/database/migrator"
+	"github.com/kit-x/xorm-migrator/migrator"
 )
 
 func main() {
@@ -13,11 +12,5 @@ func main() {
 		panic("should set TEST_DB_DSN")
 	}
 
-	migrationPath := findPath()
-	migrator.Migrate(dsn, migrationPath)
-}
-
-func findPath() string {
-	_, filename, _, _ := runtime.Caller(1)
-	return filename
+	migrator.Migrate(dsn, "../migrator/fixtures")
 }

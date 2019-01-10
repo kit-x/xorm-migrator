@@ -89,10 +89,6 @@ func initDB(dsn string) (*xorm.Engine, error) {
 		return nil, err
 	}
 
-	if err := cleanDB(db); err != nil {
-		return nil, err
-	}
-
 	return db, nil
 }
 

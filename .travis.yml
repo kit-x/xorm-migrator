@@ -1,0 +1,22 @@
+language: go
+
+go:
+  - "1.11.x"
+
+env:
+  global:
+    - GO111MODULE=on
+    - TEST_DB_DSN='root@tcp(127.0.0.1:3306)/xm_test?charset=utf8mb4&parseTime=true&loc=Local'
+
+services:
+  - mysql
+
+before_script:
+  - mysql -e 'drop database if exists xm_test;'
+  - mysql -e 'create database xm_test;'
+
+install:
+  - go mod download
+
+script:
+  - go test -v ./...

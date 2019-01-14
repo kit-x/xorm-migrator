@@ -6,6 +6,7 @@ go:
 env:
   global:
     - GO111MODULE=on
+    - CODECOV_TOKEN="1fa035ad-f93a-4be5-9df6-a78c20f984e2"
     - TEST_DB_DSN='root@tcp(127.0.0.1:3306)/xm_test?charset=utf8mb4&parseTime=true&loc=Local'
 
 services:
@@ -19,4 +20,7 @@ install:
   - go mod download
 
 script:
-  - go test -v ./...
+  - go test -race -coverprofile=coverage.txt -covermode=atomic -v ./...
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
